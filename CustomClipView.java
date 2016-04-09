@@ -223,7 +223,12 @@ public class CustomClipView extends View {
 	}
 
 	private void setView() {
-
+		if (clipwidth <= 0 || clipwidth > getDisplayWidthPx()){
+			clipwidth = getDisplayWidthPx();
+		}
+		if (clipheight <= 0 || clipheight > getDisplayHeightPx()){
+			clipwidth = getDisplayHeightPx();
+		}
 		width = this.getWidth();
 		height = this.getHeight();
 		clipwidth = (clipwidth > width) ? width : clipwidth;
